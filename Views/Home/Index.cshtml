@@ -1,8 +1,23 @@
-﻿@{
+﻿@model SimpleCalculator.Models.Calculator
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form asp-action="Index">
+        <label>Enter first number:</label>
+        <input type="number" asp-for="num1"/>
+        <br/>
+        <label>Enter second number:</label>
+        <input type="number" asp-for="num2" />
+        <br/>
+        <label>Enter Operation:</label>
+        <input type="submit" value="add" asp-for="calculate"/>
+        <input type="submit" value="sub" asp-for="calculate" />
+        <br/>
+        <label>Result :</label>
+        <input type="number" asp-for="@ViewData["result"]"/>
+    </form>    
 </div>

@@ -18,6 +18,25 @@ namespace SimpleCalculator.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(Calculator cal)
+        {
+
+            int a, b;
+            a = cal.num1;
+            b = cal.num2;
+            if(cal.calculate == "sub")
+            {
+                cal.result = a - b;
+            } 
+            else if(cal.calculate == "add")
+            {
+                cal.result = a + b;
+            }
+            ViewData["result"] = cal.result;
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
