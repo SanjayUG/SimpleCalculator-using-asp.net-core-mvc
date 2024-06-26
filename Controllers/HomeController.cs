@@ -33,6 +33,14 @@ namespace SimpleCalculator.Controllers
             {
                 cal.result = a + b;
             }
+            else if(cal.calculate == "mul")
+            {
+                cal.result = a * b;
+            }
+            else if (cal.calculate == "div")
+            {
+                cal.result = a / b;
+            }
             ViewData["result"] = cal.result;
             return View();
         }
