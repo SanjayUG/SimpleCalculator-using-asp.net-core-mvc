@@ -25,21 +25,30 @@ namespace SimpleCalculator.Controllers
             int a, b;
             a = cal.num1;
             b = cal.num2;
-            if(cal.calculate == "sub")
+            if(cal.calculate == "-")
             {
                 cal.result = a - b;
             } 
-            else if(cal.calculate == "add")
+            else if(cal.calculate == "+")
             {
                 cal.result = a + b;
             }
-            else if(cal.calculate == "mul")
+            else if(cal.calculate == "*")
             {
                 cal.result = a * b;
             }
-            else if (cal.calculate == "div")
+            else if (cal.calculate == "/")
             {
                 cal.result = a / b;
+            } 
+            else if (cal.calculate == "^")
+            {
+                int pow = 1;
+                for(int i = 1; i <= cal.num2; i++) 
+                {
+                    pow = pow * cal.num1;
+                }
+                cal.result = pow;
             }
             ViewData["result"] = cal.result;
             return View();
